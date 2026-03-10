@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SpelApp/SpelApp.csproj" />
+  <Project Path="SpelDomain/SpelDomain.csproj" />
+</Solution>
