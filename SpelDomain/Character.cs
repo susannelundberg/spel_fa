@@ -1,4 +1,6 @@
-﻿namespace SpelDomain;
+﻿using System.Text.Json;
+
+namespace SpelDomain;
 
 public class Character
 {
@@ -20,27 +22,23 @@ public class Character
 
     public void ChooseYourWeapon()
     {
-        Console.WriteLine();
+        Console.WriteLine("");
         Console.WriteLine("Välj ett vapen till din karaktär:");
         Console.WriteLine("Du kan välja mellan ett spjut(1), en pilbåge(2) eller en dolk(3)");
         string? choice = Console.ReadLine();
-        if (choice == "1")
+        Weapon = choice switch
         {
-            Weapon = "spjut";
-        }
-        else if (choice == "2")
-        {
-            Weapon = "pilbåge";
-        }
-        else if (choice == "3")
-        {
-            Weapon = "dolk";
-        }
-
+            "1" => "spjut",
+            "2" => "pilbåge",
+            "3" => "dolk",
+            _ => "okänt vapen"
+        };
         Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine($"Du har valt {Weapon}");
         Console.ResetColor();
         Console.WriteLine();
     }
+
+    
 }
